@@ -1,0 +1,40 @@
+#title-th {
+    width: 15%;
+}
+
+#product-th {
+    width: 30%;
+}
+
+#price-th {
+    width: 8%;
+}
+
+#num-th {
+    width: 8%;
+}
+
+#total-th {
+    width: 9%;
+}
+
+.orders-table {
+    width: 100%;
+    text-align: center;
+}
+
+.orders-table th {
+    text-align: center;
+}
+
+.orders-table input {
+    text-align: center;
+}
+
+.orders-table tbody tr {
+    border-top: 1px dashed #cccccc;
+}
+
+.none-display {
+    display: none;
+}

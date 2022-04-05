@@ -1,0 +1,41 @@
+#order-none, #order-price, #order-num {
+    width: 15%;
+}
+
+#order-product {
+    width: 35%;
+}
+
+#order-total {
+    width: 20%;
+}
+
+.order-bar-active {
+    background-color: #4288c3;
+    color: #ffffff;
+    min-height: 30px;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.order-bar-undo {
+    background-color: #cccccc;
+    border-radius: 5px;
+    min-height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.pay-bar {
+    height: 70px;
+}
+
+.pay-res {
+    color: #4288c3;
+    font-size: 40px;
+}
+
+.pay-res-icon {
+    font-size: 50px;
+}

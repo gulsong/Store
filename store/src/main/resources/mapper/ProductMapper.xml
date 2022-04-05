@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.design.store.mapper.ProductMapper">
+    <resultMap id="ProductEntityMap" type="com.design.store.entity.Product">
+        <id column="id" property="id"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+    <resultMap id="ProductCategoryEntityMap" type="com.design.store.entity.ProductCategory">
+        <id column="id" property="id"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_product(category_id, title, price, num, image, status, priority, created_user,
+                              created_time, modified_user, modified_time)
+        VALUES (#{categoryId}, #{title}, #{price}, #{num}, #{image}, #{status}, #{priority},
+                #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+    <update id="updateProductById">
+        UPDATE t_product
+        SET category_id=#{categoryId},
+        title=#{title},
+        price=#{price},
+        num=#{num},
+        priority=#{priority},
+        <if test="image!=null">image=#{image},</if>
+        modified_user=#{modifiedUser},
+        modified_time=#{modifiedTime}
+        WHERE id = #{id}
+    </update>
+    <update id="updateNumById">
+        UPDATE t_product
+        SET num=#{num},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE id = #{id}
+    </update>
+    <update id="updatePriorityById">
+        UPDATE t_product
+        SET priority=#{priority},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE id = #{id}
+    </update>
+    <update id="updateStatusById">
+        UPDATE t_product
+        SET status=#{status},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE id = #{id}
+    </update>
+    <update id="updatePrice">
+        UPDATE t_product
+        SET price=#{price},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE id = #{id}
+    </update>
+    <select id="findById" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE id = #{id}
+    </select>
+    <select id="findCategory" resultMap="ProductCategoryEntityMap">
+        SELECT *
+        FROM t_product_category
+        WHERE id = #{id}
+    </select>
+    <select id="findAll" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE status != 3
+        ORDER BY created_time DESC
+    </select>
+    <select id="findByCategoryId" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE category_id = #{categoryId}
+          AND status = 1
+        ORDER BY created_time DESC
+    </select>
+    <select id="findByCategoryIdAllStatus" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE category_id = #{categoryId}
+          AND status != 3
+        ORDER BY created_time DESC
+    </select>
+    <select id="findByStatus" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE status = #{status}
+        ORDER BY created_time DESC
+    </select>
+    <select id="findByCategoryIdAndStatus" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE category_id = #{categoryId}
+          AND status = #{status}
+        ORDER BY created_time DESC
+    </select>
+    <select id="findByKeyword" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE title LIKE CONCAT('%', #{keyword}, '%')
+          AND status = 1
+    </select>
+    <select id="findByKeywordAllStatus" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE title LIKE CONCAT('%', #{keyword}, '%')
+          AND status != 3
+    </select>
+    <select id="findHotList" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE status = 1
+        ORDER BY priority DESC LIMIT 0,10
+    </select>
+    <select id="findNewList" resultMap="ProductEntityMap">
+        SELECT *
+        FROM t_product
+        WHERE status = 1
+        ORDER BY created_time DESC LIMIT 0,10
+    </select>
+    <select id="getCategoryList" resultMap="ProductCategoryEntityMap">
+        SELECT *
+        FROM t_product_category
+    </select>
+</mapper>

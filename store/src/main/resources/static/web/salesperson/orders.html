@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit"/>
+    <title>电子产品销售系统-销售</title>
+    <link rel="shoetcut icon" type="image/x-icon" href="../../images/index/icon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="../../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap3/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/salesperson.css"/>
+
+</head>
+
+<body>
+<header class="header">
+    <h1>
+        <img src="../../images/index/logo-content.gif" width="100" height="100" alt=""/>电子产品销售系统
+        <small>订单管理</small>
+        <div id="user-menu" class="list-inline pull-right top-item">
+            <span class="top-dropdown-btn">
+                <a href="../login.html">&nbsp;登录&nbsp;</a>
+            </span>
+        </div>
+    </h1>
+</header>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.html">全部商品</a>
+                </li>
+                <li id="orders-li" class="active">
+                    <a href="orders.html">处理订单</a>
+                </li>
+                <li id="message-li">
+                    <a href="message.html">消息</a>
+                </li>
+                <li>
+                    <a id="a-have-btn" href="addProduct.html">
+                        <button id="btn-add-product" class="btn btn-primary" type="button">添加商品</button>
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="orderInfo.html">
+                <div class="form-group">
+                    <label for="search"></label>
+                    <input id="search" class="form-control" name="oid" type="text" placeholder="输入订单号"/>
+                </div>
+                <button class="btn btn-default" type="submit">
+                    <span class="fa fa-search"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <tr><th id="oid-list">订单号</th>
+                    <th id="name-list">收货人</th>
+                    <th id="address-list">地址</th>
+                    <th id="price-list">金额</th>
+                    <th id="status-list">订单状态</th>
+                    <th id="payment-list">支付时间</th>
+                </tr>
+                </thead>
+                <tbody id="order-list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <nav class="navbar-right page-box" aria-label="Page navigation">
+        <ul id="page" class="pagination">
+        </ul>
+    </nav>
+    <div id="sale-message-dialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sale-message-dialog-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="sale-message-dialog-label">商品销量</h4>
+                </div>
+                <div class="modal-body">
+                    <div>月销售量：0件</div>
+                    <div>月销售额：￥0</div>
+                    <div>总销售量：0件</div>
+                    <div>总销售额：￥0</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="change-price-dialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="change-price-dialog-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="change-price-dialog-label">修改价格</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="form-change-price">
+                        <div class="form-group">
+                            <label for="new-price" class="control-label">价格:</label>
+                            <input type="text" class="form-control" id="new-price" placeholder="请输入价格"/>
+                            <label for="not-auto-submit"></label>
+                            <input id="not-auto-submit" type="text"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">取消</button>
+                    <button id="change-price-yes" class="btn btn-primary" type="button">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delete-dialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="delete-dialog-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="delete-dialog-label">是否删除此商品？</h4>
+                </div>
+                <div class="modal-body">删除后无法恢复。</div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">取消</button>
+                    <button id="delete-yes" class="btn btn-primary" type="button">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="../../bootstrap3/jquery-1.8.3.min.js"></script>
+<script src="../../bootstrap3/js/bootstrap.js"></script>
+<script src="../../bootstrap3/js/holder.js"></script>
+<script src="../../js/saleJavaScript.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/saleOrders.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

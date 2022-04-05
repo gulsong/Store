@@ -1,0 +1,54 @@
+.img-big {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #aaaaaa;
+    border-radius: 3px;
+}
+
+.price-bar {
+    background: #f0f9ff;
+    color: #092f97;
+    margin: 5px;
+    padding: 8px;
+    border: 3px solid #699fd7;
+    border-radius: 3px;
+    font-size: 30px;
+}
+
+.price-bar small {
+    font-size: 14px;
+}
+
+.product-form {
+    margin: 10px 0;
+}
+
+.form-space {
+    margin: 10px 0;
+}
+
+.sold-icon {
+    color: #092F97;
+    font-size: 25px;
+}
+
+.sold-title {
+    color: #092F97;
+    font-size: 18px;
+}
+
+.sold-content {
+    color: #999999;
+    padding-bottom: 40px;
+    font-size: 12px;
+}
+
+.num-btn {
+    width: 30px;
+}
+
+.num-text {
+    text-align: center;
+}

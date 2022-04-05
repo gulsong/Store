@@ -1,0 +1,114 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "微软雅黑", "黑体", serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+td {
+    display: table-cell;
+    vertical-align: middle !important;
+}
+
+#a-have-btn {
+    padding: 8px;
+}
+
+#title-list, #payment-list, #product-price-list, #product-num-list, #product-total-list, #message-oid-list, #message-type-list, #message-time-list, #message-status-list, #message-active-list {
+    width: 20%;
+}
+
+#img-list, #price-list, #num-list, #category-list, #name-list, .info-title {
+    width: 10%;
+}
+
+#priority-list, #status-list, #oid-list {
+    width: 5%;
+}
+
+#action-list, #address-list, #product-title-list {
+    width: 40%;
+}
+
+#add-product-panel, #change-product-panel, #cancel-account-panel, #change-password-panel {
+    margin: 50px auto;
+    width: 40%;
+    height: 350px;
+}
+
+#order-info-panel {
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+}
+
+#message-panel {
+    margin: 0 auto;
+    width: 60%;
+}
+
+#order-info-panel-footer {
+    text-align: center
+}
+
+#not-auto-submit {
+    display: none;
+}
+
+.header h1 {
+    margin-top: 0;
+}
+
+.header span {
+    font-size: 16px;
+    margin: 30px 0;
+}
+
+.top-item {
+    margin: 30px;
+}
+
+.top-item a {
+    color: #777777;
+    line-height: 40px;
+}
+
+.top-item li {
+    width: 100px;
+    text-align: center;
+}
+
+.top-item .li-split {
+    width: 10px;
+}
+
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.panel {
+    height: 640px;
+}
+
+.modal-dialog {
+    top: 30%;
+}
+
+.product-img-box {
+    width: 115px;
+    height: 90px;
+}
+
+.message-page {
+    margin-right: 350px;
+}

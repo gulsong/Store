@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit"/>
+    <title>电子产品销售系统-个人中心</title>
+    <link rel="shoetcut icon" type="image/x-icon" href="../images/index/icon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+
+</head>
+
+<body>
+<header class="header">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="index.html">
+                <img src="../images/index/logo-content.gif" width="100" height="100" alt=""/>
+            </a>
+        </div>
+        <div class="col-md-9 top-item">
+            <ul class="list-inline pull-right">
+                <li>
+                    <a href="favorites.html">
+                        <span class="fa fa-heart"></span>&nbsp;收藏
+                    </a>
+                </li>
+                <li class="li-split">|</li>
+                <li>
+                    <a href="orders.html">
+                        <span class="fa fa-file-text"></span>&nbsp;订单
+                    </a>
+                </li>
+                <li class="li-split">|</li>
+                <li>
+                    <a href="cart.html">
+                        <span class="fa fa-cart-plus"></span>&nbsp;购物车
+                    </a>
+                </li>
+                <li class="li-split">|</li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="top-dropdown-btn">
+                                <span class="fa fa-gears"></span>&nbsp;个人中心&nbsp;
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu top-dropdown-ul" role="menu">
+                            <li>
+                                <a href="password.html">修改密码</a>
+                            </li>
+                            <li>
+                                <a href="userdata.html">个人资料</a>
+                            </li>
+                            <li>
+                                <a href="upload.html">上传头像</a>
+                            </li>
+                            <li>
+                                <a href="address.html">收货管理 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="li-split">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+                <li>
+                    <div id="user-menu" class="btn-group">
+                        <span class="top-dropdown-btn">
+                            <a href="login.html">&nbsp;登录&nbsp;</a>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="row top-nav">
+    <div class="col-md-6">
+        <ul id="categories-list" class="nav nav-pills">
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form class="form-inline pull-right" action="search.html" role="form">
+            <div class="form-group">
+                <label for="search"></label>
+                <input id="search" class="form-control" name="keyword" type="text" placeholder="请输入商品名称进行搜索"/>
+            </div>
+            <button class="btn btn-default btn-sm" type="submit">
+                <span class="fa fa-search"></span>
+            </button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-2">
+        <div id="accordion" class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">我的订单</a>
+                    </p>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div>
+                            <a href="orders.html">全部订单</a>
+                        </div>
+                        <div>
+                            <a href="orders.html?status=waitPay">待付款</a>
+                        </div>
+                        <div>
+                            <a href="orders.html?status=waitFinish">待收货</a>
+                        </div>
+                        <div>
+                            <a href="orders.html?status=finished">已收货</a>
+                        </div>
+                        <div>
+                            <a href="orders.html?status=cancel">已取消</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title">
+                        <a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">资料修改</a>
+                    </p>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div>
+                            <a href="password.html">修改密码</a>
+                        </div>
+                        <div>
+                            <a href="userdata.html">个人资料</a>
+                        </div>
+                        <div>
+                            <a href="upload.html">上传头像</a>
+                        </div>
+                        <div>
+                            <a href="address.html">
+                                <b>收货管理</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href="password.html">修改密码</a>
+                </li>
+                <li>
+                    <a href="userdata.html">个人资料</a>
+                </li>
+                <li>
+                    <a href="upload.html">上传头像</a>
+                </li>
+                <li class="active">
+                    <a href="address.html">收货管理</a>
+                </li>
+            </ul>
+            <div class="panel-body">
+                <form id="form-change-address" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="name">
+                            <span class="txt-red">*</span>收货人：
+                        </label>
+                        <div class="col-md-8">
+                            <input id="name" class="form-control" name="name" type="text" placeholder="请输入收货人姓名"/>
+                        </div>
+                    </div>
+                    <div class="address_content" data-toggle="distpicker">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="province-list">
+                                <span class="txt-red">*</span>省/直辖市：
+                            </label>
+                            <div class="col-md-3">
+                                <select id="province-list" class="form-control" name="provinceCode"></select>
+                            </div>
+                            <label class="col-md-2 control-label" for="city-list">
+                                <span class="txt-red">*</span>城市：
+                            </label>
+                            <div class="col-md-3">
+                                <select id="city-list" class="form-control" name="cityCode"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="area-list">
+                                <span class="txt-red">*</span>区县：
+                            </label>
+                            <div class="col-md-3">
+                                <select id="area-list" class="form-control" name="areaCode"></select>
+                            </div>
+                            <label class="col-md-2 control-label" for="zip">邮政编码：</label>
+                            <div class="col-md-3">
+                                <input id="zip" class="form-control" name="zip" type="text" placeholder="请输入6位邮政编码/">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="address">
+                            <span class="txt-red">*</span>详细地址：
+                        </label>
+                        <div class="col-md-8">
+                            <textarea id="address" class="form-control" name="address" rows="3"
+                                      placeholder="输入详细的收货地址，小区名称、门牌号等"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="phone">
+                            <span class="txt-red">*</span>手机：
+                        </label>
+                        <div class="col-md-3">
+                            <input id="phone" class="form-control" name="phone" type="text" placeholder="请输入11位手机号码"/>
+                        </div>
+                        <label class="col-md-2 control-label" for="tel">固话：</label>
+                        <div class="col-md-3">
+                            <input id="tel" class="form-control" name="tel" type="text" placeholder="请输入7-8位固定电话号码"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="tag">地址类型：</label>
+                        <div class="col-md-8">
+                            <input id="tag" class="form-control" name="tag" type="text"
+                                   placeholder="请输入地址类型，如：家、公司或者学校"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <a href="address.html">返回</a>&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <div class="col-sm-10">
+                            <input id="btn-change-address" class="col-md-1 btn btn-primary" type="button" value="保存"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container beforeBottom">
+        <div class="col-md-4 callus text-center">
+            <div class="col-md-4">
+                <ul>
+                    <li>
+                        <a href="#">新手指南</a>
+                    </li>
+                    <li>
+                        <a href="#">服务保障</a>
+                    </li>
+                    <li>
+                        <a href="#">常见问题</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="#">联系我们</a>
+                    </li>
+                    <li>
+                        <span class="fa fa-wechat"></span>
+                        <span class="fa fa-weibo"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+<script src="../bootstrap3/js/bootstrap.js"></script>
+<script src="../bootstrap3/js/holder.js"></script>
+<script src="../bootstrap3/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/javaScript.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/top.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/changeAddress.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

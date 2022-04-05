@@ -1,0 +1,51 @@
+#cart-checkbox {
+    width: 8%;
+}
+
+#cart-none {
+    width: 110px;
+}
+
+#cart-product {
+    width: 29%;
+}
+
+#cart-price {
+    width: 11%;
+}
+
+#cart-num {
+    width: 15%;
+}
+
+#cart-total {
+    width: 11%;
+}
+
+.cart-table {
+    width: 100%;
+    text-align: center;
+}
+
+.cart-table th {
+    text-align: center;
+}
+
+.cart-table input {
+    text-align: center;
+}
+
+.cart-table tbody tr {
+    border-top: 1px dashed #cccccc;
+}
+
+.num-btn {
+    width: 30px;
+}
+
+.total-bar {
+    background-color: #f0f7fe;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
