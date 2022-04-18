@@ -31,7 +31,7 @@ function showOrderCartList() {
                 for (let i = 0; i < list.length; i++) {
                     let tr = '<tr>\n' +
                         '<td>\n' +
-                        '<img class="img-responsive" src="../../../webapp#{image}" alt=""/>\n' +
+                        '<img class="img-responsive" src="../{image}" alt=""/>\n' +
                         '</td>\n' +
                         '<td>#{title}</td>\n' +
                         '<td>¥\n' +
@@ -73,7 +73,7 @@ function showOrderProduct(pid, num) {
             if (json.state === 200) {
                 let tr = '<tr>\n' +
                     '<td>\n' +
-                    '<img class="img-responsive" src="../../../webapp#{image}" alt=""/>\n' +
+                    '<img class="img-responsive" src="..#{image}" alt=""/>\n' +
                     '</td>\n' +
                     '<td>#{title}</td>\n' +
                     '<td>¥\n' +

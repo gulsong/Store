@@ -29,7 +29,7 @@ function showFavorite() {
                             }
                             html += '<div class="col-md-3">\n' +
                                 '<div class="goods-panel">\n' +
-                                '<img class="img-responsive" src="../../../webapp#{image}" onclick="toProduct(#{pid})" alt=""/>\n' +
+                                '<img class="img-responsive" src="..#{image}" onclick="toProduct(#{pid})" alt=""/>\n' +
                                 '</div>\n' +
                                 '<p>¥#{price}</p>\n' +
                                 '<p class="text-row-3">\n' +

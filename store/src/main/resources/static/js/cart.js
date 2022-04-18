@@ -27,7 +27,7 @@ function showCartList() {
                         '<input id="checkbox#{i}" name="cids" value="#{cid}" type="checkbox" class="check-item" onchange="showTotal()"/>\n' +
                         '</td>\n' +
                         '<td>\n' +
-                        '<img class="img-responsive" src="../../../webapp#{image}" alt=""/>\n' +
+                        '<img class="img-responsive" src="..#{image}" alt=""/>\n' +
                         '</td>\n' +
                         '<td>#{title}#{message}</td>\n' +
                         '<td>¥\n' +

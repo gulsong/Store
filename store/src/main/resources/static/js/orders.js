@@ -143,7 +143,7 @@ function showOrderItem(oid) {
                 for (let i = 0; i < list.length; i++) {
                     let tr = '<tr>\n' +
                         '<td>\n' +
-                        '<img class="img-responsive" src="../../../webapp#{image}" onclick="toProduct(#{pid})" alt=""/>\n' +
+                        '<img class="img-responsive" src="..#{image}" onclick="toProduct(#{pid})" alt=""/>\n' +
                         '</td>\n' +
                         '<td>\n' +
                         '<a href="javascript:void(0)" onclick="toProduct(#{pid})">#{title}</a>\n' +

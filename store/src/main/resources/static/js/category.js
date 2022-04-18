@@ -29,7 +29,7 @@ function showCategory(categoryId, pageNum) {
                         }
                         html += '<div class="col-md-3">\n' +
                             '<div class="goods-panel">\n' +
-                            '<img class="img-responsive" src="../../../webapp#{image}" onclick="toProduct(#{id})" alt=""/>\n' +
+                            '<img class="img-responsive" src="..#{image}" onclick="toProduct(#{id})" alt=""/>\n' +
                             '</div>\n' +
                             '<p>¥#{price}</p>\n' +
                             '<p class="text-row-3">\n' +
